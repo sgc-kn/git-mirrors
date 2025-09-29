@@ -5,6 +5,7 @@ OPENCODE_BASE := 'git@gitlab.opencode.de:stadt-konstanz'
 all:
   just gh-to-oc cds-examples
   just gh-to-oc dashboards
+  just gh-to-oc git-mirrors
   just gh-to-oc k8s-sandbox
   just gh-to-oc konstanz-in-zahlen
   just gh-to-oc nr-flows-dwd
