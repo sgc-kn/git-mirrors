@@ -11,5 +11,5 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: apt update && apt install just
+      - run: sudo apt update && sudo apt install just
       - run: just
