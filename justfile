@@ -28,7 +28,7 @@ gh-to-oc name:
 mirror name src dst:
   #!/usr/bin/env bash
   if [ -e {{REPOS}}/{{name}}.git ] ; then
-    git -C {{REPOS}}/{{name}}.git remote update
+    git -C {{REPOS}}/{{name}}.git pull
   else
     git clone {{src}} {{REPOS}}/{{name}}.git
   fi
