@@ -34,7 +34,3 @@ mirror name src dst:
   fi
   git -C {{REPOS}}/{{name}}.git lfs fetch --all
   git -C {{REPOS}}/{{name}}.git push {{dst}}
-
-update-known-hosts:
-  ssh-keyscan github.com > ssh_known_hosts
-  ssh-keyscan gitlab.opencode.de >> ssh_known_hosts
