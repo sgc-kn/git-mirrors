@@ -13,6 +13,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: repos
+          key: repos-0
       - name: Dependency Setup
         run: sudo apt update && sudo apt install just
       - name: SSH Private Key Setup
