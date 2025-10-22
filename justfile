@@ -11,6 +11,7 @@ all:
   just gh-to-oc nr-flows-dwd
   just gh-to-oc nr-flows-ecocounter
   just gh-to-oc nr-flows-lubw
+  just gh-to-oc nr-flows-mastr
   just gh-to-oc nr-flows-mobidata
   just gh-to-oc nr-flows-parkdaten
   just gh-to-oc nr-flows-passantenlasepeco
