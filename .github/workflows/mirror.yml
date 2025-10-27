@@ -8,7 +8,7 @@ on:
     - cron: "21 4 * * *"  # daily at 04:21
 
 jobs:
-  main:
+  mirror:
     runs-on: ubuntu-latest
 
     steps:

@@ -16,3 +16,5 @@ For example, my `.env` file looks like this (key rotated):
 ```shell
 OPENCODE_GITLAB_CREDENTIALS=OC000040163666:glpat-pbJkijPQH-5DguPkydsqOm86MQp1OjN1MQk.01.0z17ynf68
 ```
+
+I've set up a Github Action workflow to run this automation regularly. The workflow assumes that `OPENCODE_GITLAB_CREDENTIALS` is configured as Github Actions repository secret. In addition to the daily schedule, the workflow can be dispatched from the Github UI.
