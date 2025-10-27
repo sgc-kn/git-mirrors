@@ -2,16 +2,17 @@ Tooling to keep our git mirrors up-to-date.
 
 Run `just all` in the project root to update all mirrors.
 
-To run this in a Github Codespace, do:
+This automation assumes:
+1. All source repositories are public and they can be accesses without credentials.
+2. The credentials in the environment variable `OPENCODE_GITLAB_CREDENTIALS` authorize to write all target repositories.
+
+To get this running from scratch in a Github Codespace:
 1. Start a fresh Codespace on `main` branch of this repository.
-2. Run `just setup` and follow the instructions.
-3. Run `just all` to do the actual mirroring.
+2. Create a personal access token in OpenCode's Gitlab, choose `read_repository` and `write_repository` permissions.
+3. Create a `.env` file in the root of this repository, with one line: `OPENCODE_GITLAB_CREDENTIALS=<USER>:<TOKEN>`.
 
-Note: It seems OpenCode Gitlab is blocking (or rate-limiting) SSH access from Github's cloud infrastructure. I observe a lot of errors, that I cannot explain otherwise. This would also explain my earlier issues with Github action automation in commit 027affe5.
+For example, my `.env` file looks like this (key rotated):
 
----
-
-I've tried to schedule this for regular execution on Github Action.
-There is a draft workflow in commit 027affe5. Unfortunately, it did
-not work reliably. Instead of debugging this for hours, I'll just run
-the script manually for now.
+```shell
+OPENCODE_GITLAB_CREDENTIALS=OC000040163666:glpat-pbJkijPQH-5DguPkydsqOm86MQp1OjN1MQk.01.0z17ynf68
+```
