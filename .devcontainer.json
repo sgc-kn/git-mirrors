@@ -1,0 +1,5 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "postCreateCommand": "sudo apt update && sudo apt install just git-lfs",
+  "postAttachCommand": "just -l && echo 'Run `just <recipe>` to start the given recipe.'"
+}
