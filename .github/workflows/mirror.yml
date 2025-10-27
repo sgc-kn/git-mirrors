@@ -1,0 +1,25 @@
+name: Scheduled Mirroring
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+  schedule:
+    - cron: "21 4 * * *"  # daily at 04:21
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: repos
+          key: repos-0
+      - name: Dependency Setup
+        run: sudo apt update && sudo apt install just
+      - name: Mirror all repositories
+        run: just all
+        env:
+          OPENCODE_GITLAB_CREDENTIALS: ${{ secrets.OPENCODE_GITLAB_CREDENTIALS }}
